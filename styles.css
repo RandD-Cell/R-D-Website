@@ -1045,7 +1045,6 @@ footer {
   .nav-links li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--card-border); }
   .nav-links li:last-child { border-bottom: none; padding-top: 1rem; }
   .nav-links a { display: block; }
-  nav { position: relative; }
   section { padding: 60px 1rem; }
   .overview-grid, .webinars-grid, .events-grid, .achievements-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
