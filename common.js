@@ -6,6 +6,23 @@ if (nav) {
   });
 }
 
+// Mobile hamburger menu
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  // Close menu when a link is tapped
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 // Scroll-reveal
 const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
 if ('IntersectionObserver' in window && revealEls.length) {

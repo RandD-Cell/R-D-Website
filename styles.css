@@ -997,9 +997,55 @@ footer {
   .past-webinars-grid, .contact-grid { grid-template-columns: 1fr; }
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 200;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media (max-width: 600px) {
   nav { padding: 0 1rem; }
-  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 0.5rem 1rem 1.5rem;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links.open { max-height: 500px; }
+  .nav-links li { width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--card-border); }
+  .nav-links li:last-child { border-bottom: none; padding-top: 1rem; }
+  .nav-links a { display: block; }
+  nav { position: relative; }
   section { padding: 60px 1rem; }
   .overview-grid, .webinars-grid, .events-grid, .achievements-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
