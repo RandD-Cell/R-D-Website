@@ -254,8 +254,11 @@ nav.scrolled {
   line-height: 1.1;
   margin-bottom: 1rem;
   overflow-wrap: break-word;
-  word-break: break-word;
   max-width: 100%;
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 2rem; }
 }
 
 .hero h1 span {
@@ -925,9 +928,13 @@ footer {
   color: #fff;
   margin-bottom: 0.85rem;
   overflow-wrap: break-word;
-  word-break: break-word;
   max-width: 100%;
 }
+
+@media (max-width: 420px) {
+  .page-header h1 { font-size: 1.75rem; }
+}
+
 .page-header h1 span {
   background: linear-gradient(90deg, var(--green-accent), #86efac);
   -webkit-background-clip: text;
